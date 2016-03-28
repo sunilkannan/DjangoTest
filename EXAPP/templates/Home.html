@@ -1,0 +1,28 @@
+<html>
+   
+   <body>
+   Share your thoughts:
+   <form method="post" action=" " name = "tform" > {% csrf_token %}   {{ form.as_p }}
+  <textarea rows="2" cols="70" name = "postdata" >
+  </textarea>
+  <input type="submit" value="submit"><br>
+  </form>
+  <h2> Your friends feeds </h2>
+
+   <ul>
+        {% for feeds in object %}
+            <li>{{ feeds.username }} : {{feeds.user_post}}</li>
+        {% endfor %}
+    </ul>
+<h1>{{ object.UserName }}</h1>
+<!-- <p>{{ object.content }}</p>
+<p>Reporter: {{ object.reporter }}</p>
+<p>Published: {{ object.pub_date|date }}</p>
+<p>Date: {{ now|date }}</p> -->
+
+   
+   </body>
+
+
+</html>
+
